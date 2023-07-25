@@ -49,6 +49,13 @@ And the LHS:
 
 Each key represents a prime number that originates on the RHS (+ 1 a multiple of 6) and the LHS (-1 a multiple of 6), respectively. Each value associated with each key is a multiple of that prime number that we say "blocks" that integer from being prime (since they are in a potential prime position: alternating from RHS to LHS).
 
+Using `gen_primes.py` combines both `gen_block_lhs.py` and `gen_block_rhs.py` to find the amount of primes up to n (less 2 and 3):
+```python
+$ python gen_primes.py
+Enter a number: 100
+[5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+```
+
 ## Performance
 
 The current version of the algorithm has a time complexity of O(n^2), which may not be ideal for large inputs. However, it provides a unique approach to prime number generation and demonstrates an interesting property of prime numbers.
