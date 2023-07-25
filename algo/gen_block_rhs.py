@@ -1,14 +1,14 @@
-def get_user_input():
-    try:
-        n = int(input("Enter an integer (we will find all prime blocks up to this n): "))
-        k = n // 6
-        return n, k
-    except ValueError:
-        print("Please enter a valid integer.")
-        return get_user_input()
+# def get_user_input():
+#     try:
+#         n = int(input("Enter an integer (we will find all prime blocks up to this n): "))
+#         k = n // 6
+#         return n, k
+#     except ValueError:
+#         print("Please enter a valid integer.")
+#         return get_user_input()
     
 
-def generate_rhs(k):
+def generate_rhs(n, k):
     # Start with the first prime one less than a multiple of 6
     prime = 7
     primes = [prime]
@@ -56,15 +56,15 @@ def generate_blocking_positions(n, primes):
         
     return blocking_positions_dict
 
-n, k = get_user_input()
-blocking_positions_dict = generate_blocking_positions(n, generate_rhs(k))
+# n, k = get_user_input()
+# blocking_positions_dict = generate_blocking_positions(n, generate_rhs(k))
 
-for p, blocking_positions in blocking_positions_dict.items():
-    print(f"Blocking positions for {p}:")
-    print(blocking_positions)
-    print()
+# for p, blocking_positions in blocking_positions_dict.items():
+#     print(f"Blocking positions for {p}:")
+#     print(blocking_positions)
+#     print()
 
-# Print the integer values corresponding to the blocking positions
-blocking_integers_dict = {p: sorted([position_to_integer(sequence, index) for sequence, index in blocking_positions]) for p, blocking_positions in blocking_positions_dict.items()}
+# # Print the integer values corresponding to the blocking positions
+# blocking_integers_dict = {p: sorted([position_to_integer(sequence, index) for sequence, index in blocking_positions]) for p, blocking_positions in blocking_positions_dict.items()}
 
-print(blocking_integers_dict)
+# print(blocking_integers_dict)
